@@ -3,10 +3,26 @@ block content
   main
     section
       .container
-        h1.mt-5.mb-5 New Web App
-
-        p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad amet deleniti dicta error fugit itaque laborum natus quibusdam quod reprehenderit. Aut autem in ipsa libero magnam nostrum obcaecati, repellendus sapiente.
-        p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad amet deleniti dicta error fugit itaque laborum natus quibusdam quod reprehenderit. Aut autem in ipsa libero magnam nostrum obcaecati, repellendus sapiente.
-        p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad amet deleniti dicta error fugit itaque laborum natus quibusdam quod reprehenderit. Aut autem in ipsa libero magnam nostrum obcaecati, repellendus sapiente.
-
-
+        .row
+          .col-sm-9.col-md-7.col-lg-5.mx-auto
+            .card.card-signin.my-5
+              .card-body
+                h5.card-title.text-center Увійти
+                form(action='/home.html').form-signin
+                  .form-label-group
+                    input#inputEmail.form-control(type='email' placeholder='Логін' required autofocus)
+                    label(for='inputEmail') Логін
+                  .form-label-group
+                    input#inputPassword.form-control(type='password' placeholder='Пароль' required)
+                    label(for='inputPassword') Пароль
+                  .custom-control.custom-checkbox.mb-3
+                    input#customCheck1.custom-control-input(type='checkbox')
+                    label.custom-control-label(for='customCheck1') Запам'ятати
+                  button.btn.btn-lg.btn-primary.btn-block.text-uppercase(type='submit') Увійти
+                  //- hr.my-4
+                  //- button.btn.btn-lg.btn-google.btn-block.text-uppercase(type='submit')
+                  //-   i.fab.fa-google.mr-2
+                  //-   |  Sign in with Google
+                  //- button.btn.btn-lg.btn-facebook.btn-block.text-uppercase(type='submit')
+                  //-   i.fab.fa-facebook-f.mr-2
+                  //-   |  Sign in with Facebook

@@ -34,7 +34,7 @@ const browserSync = done => {
     server: {
       baseDir: dist
     },
-    port: 3000,
+    port: 4001,
     online: true,
   });
   done();
