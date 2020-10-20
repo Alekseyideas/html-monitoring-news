@@ -1,8 +1,67 @@
+:root {
+  --input-padding-x: 1rem;
+  --input-padding-y: 0.75rem;
+}
+
 html {
-	font-size: $startSize;
+  //   font-size: $startSize;
 }
 
 body {
-	background: #f9f9f9;
-	font: $font;
+  background: #f9f9f9;
+  //   font: $font;
+}
+
+img {
+  max-width: 100%;
+}
+
+.home-main {
+  padding: 20px 0 0 350px;
+}
+
+.news-wrapperl-list {
+  display: block;
+  font-weight: 300;
+  font-size: 15px;
+  text-decoration: none;
+
+  .h1,
+  .h2,
+  .h3,
+  .h6,
+  .h5,
+  .h4 {
+    color: black;
+    text-decoration: none;
+  }
+  a {
+    color: grey;
+    text-decoration: none;
+    &:hover {
+      span {
+        // text-decoration: underline;
+        color: #0275d8;
+      }
+      .h1,
+      .h2,
+      .h3,
+      .h6,
+      .h5,
+      .h4 {
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.page-link {
+  position: relative;
+  display: block;
+  padding: 0.5rem 0.75rem;
+  margin-left: 0;
+  line-height: 1.25;
+  color: #677788;
+  background-color: #fff;
+  border: 0 solid #e7eaf3;
 }
