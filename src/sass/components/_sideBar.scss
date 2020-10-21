@@ -8,6 +8,14 @@
   overflow-y: auto;
   background: #ffffff;
   box-shadow: 0 0 12px 5px rgba($color: #000000, $alpha: 0.1);
+  @include maxLg() {
+    position: relative;
+    width: 100%;
+    height: auto;
+    overflow: auto;
+    box-shadow: none;
+  }
+
   .nav-subtitle {
     display: block;
     color: #8c98a4;
@@ -18,6 +26,11 @@
   .logo {
     img {
       max-width: 150px;
+    }
+    @include maxLg() {
+      text-align: center;
+      margin: 10px auto;
+      display: none;
     }
   }
   .form-label-group {
