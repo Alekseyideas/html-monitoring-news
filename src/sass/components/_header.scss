@@ -1,2 +1,12 @@
 .header {
+  @include maxLg() {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    left: 0;
+    padding: 20px;
+    background: #fff;
+    z-index: 9;
+    box-shadow: 0 0 5px rgba($color: #000000, $alpha: 0.2);
+  }
 }

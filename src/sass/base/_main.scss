@@ -10,6 +10,9 @@ html {
 body {
   background: #f9f9f9;
   //   font: $font;
+  @include maxLg() {
+    padding-top: 80px;
+  }
 }
 
 img {
@@ -18,6 +21,10 @@ img {
 
 .home-main {
   padding: 20px 0 0 350px;
+
+  @include maxLg() {
+    padding: 0;
+  }
 }
 
 .news-wrapperl-list {
@@ -64,4 +71,28 @@ img {
   color: #677788;
   background-color: #fff;
   border: 0 solid #e7eaf3;
+}
+
+.pagination {
+  flex-wrap: wrap;
+  @include maxLg() {
+    justify-content: center;
+
+    & > li {
+      margin: 5px 0;
+    }
+  }
+}
+
+.page-header-title {
+  font-size: 25px;
+  padding-right: 10px;
+
+  @include maxLg() {
+    font-size: 18px;
+  }
+}
+
+.btn-exit {
+  min-width: 97px;
 }
