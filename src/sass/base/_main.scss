@@ -1,8 +1,10 @@
 :root {
-  --input-padding-x: 1rem;
-  --input-padding-y: 0.75rem;
+  --input-padding-x: 0.4rem;
+  --input-padding-y: 0.45rem;
 }
 
+$red: #c53939;
+$hoverBg: rgba(185, 185, 185, 0.1);
 html {
   //   font-size: $startSize;
 }
@@ -43,12 +45,15 @@ img {
     text-decoration: none;
   }
   a {
-    color: grey;
+    color: black;
     text-decoration: none;
     &:hover {
+      background: $hoverBg;
+
       span {
         // text-decoration: underline;
-        color: #0275d8;
+        color: $red;
+        text-decoration: underline;
       }
       .h1,
       .h2,
@@ -75,6 +80,13 @@ img {
 
 .pagination {
   flex-wrap: wrap;
+
+  a {
+    &:hover {
+      color: $red;
+      background: none;
+    }
+  }
   @include maxLg() {
     justify-content: center;
 
@@ -87,12 +99,86 @@ img {
 .page-header-title {
   font-size: 25px;
   padding-right: 10px;
-
+  margin: 0;
   @include maxLg() {
     font-size: 18px;
   }
 }
 
 .btn-exit {
-  min-width: 97px;
+  // min-width: 97px;
+  height: auto;
+  padding: 0;
+  align-items: center;
+  display: flex;
+}
+.newsWrapper {
+  font-size: 13px;
+  &-date {
+    min-width: 120px;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+    svg {
+      margin-right: 5px;
+    }
+  }
+  .list-group-item {
+    // display: flex;
+    // justify-content: space-between;
+    // align-items: center;
+    padding: 0.35rem 1.25rem;
+  }
+
+  &-title {
+    margin-right: 20px;
+    color: black;
+  }
+  &-src {
+    margin: 0;
+  }
+}
+
+.form-label-group {
+  display: flex;
+  height: 40px;
+  .btn {
+    background: rgb(231, 231, 231);
+    padding: 0 10px !important;
+    border-radius: 0 !important;
+    color: black;
+    display: flex;
+    align-items: center;
+    svg {
+      width: 15px;
+      height: 15px;
+    }
+  }
+}
+.form-label-group input {
+  height: auto;
+  border-radius: 0;
+  font-size: 14px;
+}
+.form-label-group > input,
+.form-label-group > label {
+  padding: var(--input-padding-y) var(--input-padding-x);
+}
+
+.datepicker {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1;
+  background: white;
+  padding: 10px 10px !important;
+  box-shadow: 0 0 10px rgba($color: #000000, $alpha: 0.1);
+}
+.table-condensed {
+  margin: auto;
+}
+
+select {
+  height: 40px !important;
 }
