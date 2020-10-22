@@ -1,10 +1,13 @@
 .sidebar-container {
   position: fixed;
   width: 320px;
-  padding: 40px 20px;
+  padding: 20px 20px 20px;
   height: 100%;
   left: 0;
   overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   overflow-y: auto;
   background: #ffffff;
   box-shadow: 0 0 12px 5px rgba($color: #000000, $alpha: 0.1);
@@ -27,6 +30,7 @@
     img {
       max-width: 150px;
     }
+
     @include maxLg() {
       text-align: center;
       margin: 10px auto;
@@ -79,6 +83,7 @@
   .rubric {
     margin-left: -20px;
     margin-right: -20px;
+    margin-bottom: 50px;
     a {
       display: flex;
       color: rgb(73, 73, 73);

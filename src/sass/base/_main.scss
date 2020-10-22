@@ -182,3 +182,21 @@ img {
 select {
   height: 40px !important;
 }
+
+.form-control:focus {
+  box-shadow: none;
+}
+
+.form-label-group {
+  .btn {
+    cursor: default !important;
+  }
+}
+
+.custom-control-label::before {
+  border-radius: 0 !important;
+}
+
+button.btn {
+  border-radius: 0 !important;
+}
