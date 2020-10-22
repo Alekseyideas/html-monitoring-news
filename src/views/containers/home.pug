@@ -6,27 +6,46 @@ block content
       +image('logo-mcfr.png')
     form(action='/home.html').form-signin
       .form-label-group#searchWrapper
-        input#inputSearch.form-control(type='text' placeholder='Пошук' )
-        label(for='inputSearch') Пошук
-        button.btn.btn-search 
+        button.btn
           svg.bi.bi-search(width='1em' height='1em' viewBox='0 0 16 16' fill='currentColor' xmlns='http://www.w3.org/2000/svg')
             path(fill-rule='evenodd' d='M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z')
             path(fill-rule='evenodd' d='M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z')
-    hr.mt-5
-    small.mb-4.nav-subtitle(title='Фільтри') Фільтри
+        input#inputSearch.form-control(type='text' placeholder='Пошук' )
+        //- label(for='inputSearch') Пошук
+
+    hr.mt-4
+    small.mb-3.nav-subtitle(title='Фільтри') Фільтри
     form(action='')
       .form-label-group
-        input#inputDate.form-control(type='date' placeholder='дата' )
-        label(for='inputDate') Дата
-
+        button.btn
+          svg.bi.bi-calendar3(width='1em' height='1em' viewBox='0 0 16 16' fill='currentColor' xmlns='http://www.w3.org/2000/svg')
+            path(fill-rule='evenodd' d='M14 0H2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zM1 3.857C1 3.384 1.448 3 2 3h12c.552 0 1 .384 1 .857v10.286c0 .473-.448.857-1 .857H2c-.552 0-1-.384-1-.857V3.857z')
+            path(fill-rule='evenodd' d='M6.5 7a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2z')
+              
+        input#inputDate.form-control(type='text' placeholder='дата' value="" autocomplete="off")
+        //- label(for='inputDate') Дата
+      - var i = 0;
       .form-label-group
-        input#inputIst.form-control(type='text' placeholder='Джерело' )
-        label(for='inputIst') Джерело
+        button.btn
+          svg.bi.bi-card-list(width='1em' height='1em' viewBox='0 0 16 16' fill='currentColor' xmlns='http://www.w3.org/2000/svg')
+            path(fill-rule='evenodd' d='M14.5 3h-13a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z')
+            path(fill-rule='evenodd' d='M5 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 5 8zm0-2.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0 5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5z')
+            circle(cx='3.5' cy='5.5' r='.5')
+            circle(cx='3.5' cy='8' r='.5')
+            circle(cx='3.5' cy='10.5' r='.5')
+
+        select.custom-select
+          option Виберiть джерело
+          while i < 100
+            option Джерело !{i++}
+
+        //- input#inputIst.form-control(type='text' placeholder='Джерело' )
+        //- label(for='inputIst') Джерело
 
 
-    hr.mt-5
+    hr.mt-4
     small.nav-subtitle(title='Рубрики') Рубрики
-    .mt-4.rubric
+    .mt-2.rubric
       a(href="/").mt-0
         span !{iconText}
         | Рубрика 1
@@ -43,46 +62,23 @@ block content
   main.home-main
     .container-fluid
       header.header 
-        .d-flex.align-items-center.justify-content-between
+        .d-flex.align-items-end.justify-content-between
           h1.page-header-title Раздел
-          a.btn.btn-primary.btn-exit
+          a.btn.btn-link.btn-exit
             svg.mr-2.bi.bi-box-arrow-in-left(width='1em' height='1em' viewBox='0 0 16 16' fill='currentColor' xmlns='http://www.w3.org/2000/svg')
               path(fill-rule='evenodd' d='M10 3.5a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-2a.5.5 0 0 1 1 0v2A1.5 1.5 0 0 1 9.5 14h-8A1.5 1.5 0 0 1 0 12.5v-9A1.5 1.5 0 0 1 1.5 2h8A1.5 1.5 0 0 1 11 3.5v2a.5.5 0 0 1-1 0v-2z')
               path(fill-rule='evenodd' d='M4.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H14.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3z')
             | Вийти
 
-
-      div.list-group.news-wrapperl-list.mt-3
-        a(href="/" target="_blank").list-group-item
-          span.h5 Заголовок 
-          span.d-block Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. 
-        a(href="/" target="_blank").list-group-item
-          span.h5 Заголовок 
-          span.d-block Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. 
-        a(href="/" target="_blank").list-group-item
-          span.h5 Заголовок 
-          span.d-block Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. 
-        a(href="/" target="_blank").list-group-item
-          span.h5 Заголовок 
-          span.d-block Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. 
-        a(href="/" target="_blank").list-group-item
-          span.h5 Заголовок 
-          span.d-block Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. 
-        a(href="/" target="_blank").list-group-item
-          span.h5 Заголовок 
-          span.d-block Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. 
-        a(href="/" target="_blank").list-group-item
-          span.h5 Заголовок 
-          span.d-block Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. 
-        a(href="/" target="_blank").list-group-item
-          span.h5 Заголовок 
-          span.d-block Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. 
-        a(href="/" target="_blank").list-group-item
-          span.h5 Заголовок 
-          span.d-block Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. 
-        a(href="/" target="_blank").list-group-item
-          span.h5 Заголовок 
-          span.d-block Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. 
+      - var n = 0;
+      - var largeText = 'Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб ...'
+      - var smalTet = 'Заголовок';
+      div.list-group.news-wrapperl-list.mt-3.newsWrapper
+        while n < 25
+          a(href="/" target="_blank" data-t=n++).list-group-item
+            span 20.09.2020 17:15,
+            span  !{n === 2 || n === 5 || n === 15 ? largeText : smalTet}, 
+            span.newsWrapper-src Держпраці у Дніпропетровській 
 
       nav.mt-5.mb-5
         ul.pagination
